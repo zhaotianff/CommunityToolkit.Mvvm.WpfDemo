@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32802.440
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunityToolkit.Mvvm.WpfDemo", "CommunityToolkit.Mvvm.WpfDemo\CommunityToolkit.Mvvm.WpfDemo.csproj", "{AB8EC51E-7594-4B76-A8F4-369D51E1E870}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB8EC51E-7594-4B76-A8F4-369D51E1E870}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB8EC51E-7594-4B76-A8F4-369D51E1E870}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB8EC51E-7594-4B76-A8F4-369D51E1E870}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB8EC51E-7594-4B76-A8F4-369D51E1E870}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D00C3F6E-55EE-4F1E-BCC9-B08B0CC50097}
+	EndGlobalSection
+EndGlobal

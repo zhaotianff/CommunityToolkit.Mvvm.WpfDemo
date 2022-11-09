@@ -1,0 +1,30 @@
+﻿<blur:BlurWindow x:Class="CommunityToolkit.Mvvm.WpfDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:blur="clr-namespace:TianXiaTech;assembly=BlurWindow"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CommunityToolkit.Mvvm.WpfDemo"
+        mc:Ignorable="d"
+        Height="550" Width="950" Title="CommunityToolkit.Mvvm.WpfDemo" WindowStartupLocation="CenterScreen">
+    <blur:BlurWindow.Background>
+        <SolidColorBrush Color="White" Opacity=".8"/>
+    </blur:BlurWindow.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="27.8"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel >
+                <Button Content="SetProperty" Margin="5"></Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</blur:BlurWindow>
