@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Height="550" Width="950" Title="CommunityToolkit.Mvvm.WpfDemo" WindowStartupLocation="CenterScreen">
     <blur:BlurWindow.Background>
-        <SolidColorBrush Color="White" Opacity=".8"/>
+        <SolidColorBrush Color="White" Opacity=".9"/>
     </blur:BlurWindow.Background>
     <Grid>
         <Grid.RowDefinitions>
@@ -22,9 +22,13 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel >
-                <Button Content="SetProperty" Margin="5"></Button>
-            </StackPanel>
+            <Border  Margin="10,10,0,10" BorderThickness="1" BorderBrush="Silver">
+                <StackPanel >
+                    <Button Content="ObservableObject" Margin="5" Click="Button_Click"></Button>
+                </StackPanel>
+            </Border>
+
+            <Frame Grid.Column="1" NavigationUIVisibility="Hidden" Name="frame" Margin="10" BorderBrush="Silver" BorderThickness="1"/>
         </Grid>
     </Grid>
 </blur:BlurWindow>

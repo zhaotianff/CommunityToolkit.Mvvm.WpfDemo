@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -13,21 +11,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CommunityToolkit.Mvvm.WpfDemo
+namespace CommunityToolkit.Mvvm.WpfDemo.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// ObservableObjectPage.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : TianXiaTech.BlurWindow
+    public partial class ObservableObjectPage : Page
     {
-        public MainWindow()
+        public ObservableObjectPage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            frame.Source = new Uri("Pages/ObservableObjectPage.xaml", UriKind.Relative);
+            this.DataContext = new ViewModels.ObservableObjectPageViewModel();
         }
     }
 }
