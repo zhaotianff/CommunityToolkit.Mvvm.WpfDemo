@@ -43,5 +43,13 @@
                 <Button Content="更新名字" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Command="{Binding UpdateNameCommand}"></Button>
             </Grid>
         </GroupBox>
+
+        <GroupBox Header="命令CanExecute通知" Grid.Row="2">
+            <DockPanel Grid.Row="0" LastChildFill="False">
+                <TextBox Text="{Binding InputText,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Width="200" VerticalAlignment="Top"/>
+
+                <Button Content="MsgShow" HorizontalAlignment="Left" VerticalAlignment="Top" Command="{Binding MsgShowCommand}"/>
+            </DockPanel>
+        </GroupBox>
     </Grid>
 </Page>

@@ -1,8 +1,10 @@
-﻿using CommunityToolkit.Mvvm.Input;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.WpfDemo.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
@@ -23,16 +25,34 @@ namespace CommunityToolkit.Mvvm.WpfDemo.ViewModels
         private ObservableStudent selectedStudent;
         public ObservableStudent SelectedStudent { get => selectedStudent; set => SetProperty(ref selectedStudent, value); }
 
+        private string inputText;
+
+        public string InputText 
+        { 
+            get => inputText; 
+            set
+            {
+                SetProperty(ref inputText, value);
+                MsgShowCommand.NotifyCanExecuteChanged();
+            }
+        }
 
         public ICommand UpdateCommand { get; set; }
         public ICommand UpdateNameCommand { get; set; }
+
+        public IRelayCommand MsgShowCommand { get; set; }
 
         public ObservableObjectPageViewModel()
         {
             UpdateCommand = new RelayCommand(UpdateTime);
             UpdateNameCommand = new RelayCommand(UpdateName);
+            MsgShowCommand = new RelayCommand(ShowMsg, CanShowMsgExecute);
             InitStudentList();
         }
+
+        private void ShowMsg() => MessageBox.Show(InputText);
+
+        private bool CanShowMsgExecute() => !string.IsNullOrEmpty(InputText);
 
         private void UpdateTime()
         {
@@ -49,7 +69,6 @@ namespace CommunityToolkit.Mvvm.WpfDemo.ViewModels
 
             StudentList.Add(new ObservableStudent(student1));
             StudentList.Add(new ObservableStudent(student2));
-
         }
 
         private void UpdateName()
