@@ -12,44 +12,26 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <GroupBox Header="通知事件">
+        <GroupBox Header="简单属性">
             <DockPanel Grid.Row="0" LastChildFill="False">
-                <TextBox Width="200" Text="{Binding CurrentTime,Mode=OneWay}" VerticalAlignment="Center"/>
-                <Button Content="更新时间" VerticalAlignment="Center" Command="{Binding UpdateCommand}"/>
+                <Label Content="当前时间" VerticalAlignment="Center"/>
+                <TextBox Width="200" Text="{Binding CurrentTime}" VerticalAlignment="Center"/>
             </DockPanel>
         </GroupBox>
 
         <GroupBox Header="包装非Obseravble模型" Grid.Row="1">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition Height="30"/>
-                </Grid.RowDefinitions>
-
-                <ListBox ItemsSource="{Binding StudentList}" SelectedItem="{Binding SelectedStudent}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <DockPanel Height="45" LastChildFill="False">
-                                <TextBlock DockPanel.Dock="Left" Text="{Binding ID}" FontSize="20" FontWeight="Bold" Width="100"/>
-                                <TextBlock DockPanel.Dock="Left" Text="{Binding Name}" Width="200"/>
-                            </DockPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-
-                <Button Content="更新名字" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Command="{Binding UpdateNameCommand}"></Button>
-            </Grid>
-        </GroupBox>
-
-        <GroupBox Header="命令CanExecute通知" Grid.Row="2">
-            <DockPanel Grid.Row="0" LastChildFill="False">
-                <TextBox Text="{Binding InputText,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Width="200" VerticalAlignment="Top"/>
-
-                <Button Content="MsgShow" HorizontalAlignment="Left" VerticalAlignment="Top" Command="{Binding MsgShowCommand}"/>
-            </DockPanel>
+            <ListBox ItemsSource="{Binding StudentList}" SelectedItem="{Binding SelectedStudent}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel Height="45" LastChildFill="False">
+                            <TextBlock DockPanel.Dock="Left" Text="{Binding ID}" FontSize="20" FontWeight="Bold" Width="100"/>
+                            <TextBlock DockPanel.Dock="Left" Text="{Binding Name}" Width="200"/>
+                        </DockPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </GroupBox>
     </Grid>
 </Page>
