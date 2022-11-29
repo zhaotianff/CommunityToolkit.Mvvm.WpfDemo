@@ -4,12 +4,17 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:CommunityToolkit.Mvvm.WpfDemo.Pages"
+      xmlns:converters="clr-namespace:CommunityToolkit.Mvvm.WpfDemo.Converters"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ObservableObjectPage">
+    <Page.Resources>
+        <converters:TaskStatusConverter x:Key="taskStatusConverter"/>
+    </Page.Resources>
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -32,6 +37,13 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
+        </GroupBox>
+
+        <GroupBox Header="Task&lt;T&gt;属性" Grid.Row="2">
+            <DockPanel Grid.Row="0" LastChildFill="False">
+                <Label Content="{Binding MyTask.Status,Converter={StaticResource taskStatusConverter}}" VerticalAlignment="Center"/>
+                <TextBox Width="200" Text="{Binding TaskResult}" VerticalAlignment="Center"/>
+            </DockPanel>
         </GroupBox>
     </Grid>
 </Page>

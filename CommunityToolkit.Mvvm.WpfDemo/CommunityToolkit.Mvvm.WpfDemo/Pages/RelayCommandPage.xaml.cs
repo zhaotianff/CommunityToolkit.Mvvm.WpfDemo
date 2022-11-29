@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.WpfDemo.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,7 @@ namespace CommunityToolkit.Mvvm.WpfDemo.Pages
         public RelayCommandPage()
         {
             InitializeComponent();
+            this.DataContext = new RelayCommandPageViewModel();
         }
     }
 }

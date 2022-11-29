@@ -4,9 +4,13 @@ using CommunityToolkit.Mvvm.WpfDemo.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
@@ -24,13 +28,41 @@ namespace CommunityToolkit.Mvvm.WpfDemo.ViewModels
 
 
         private ObservableStudent selectedStudent;
-        public ObservableStudent SelectedStudent { get => selectedStudent; set => SetProperty(ref selectedStudent, value); }
+        public ObservableStudent SelectedStudent { get => selectedStudent; set => SetProperty(ref selectedStudent,value); }
 
+
+        private TaskNotifier<string>? myTask;
+
+        public Task<string>? MyTask
+        {
+            get => myTask;
+            private set => SetPropertyAndNotifyOnCompletion(ref myTask, value);
+        }
+
+        private string taskResult;
+        public string TaskResult { get => taskResult; set => SetProperty(ref taskResult, value); }
 
         public ObservableObjectPageViewModel()
         {
             InitStudentList();
             StartUpdateTimer();
+            MyTask = GetTextAsync();
+
+            this.PropertyChanged += ObservableObjectPageViewModel_PropertyChanged;
+        }
+
+        private void ObservableObjectPageViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(MyTask))
+            {
+                TaskResult = MyTask.Result;
+            }
+        }
+
+        private async Task<string> GetTextAsync()
+        {
+            await Task.Delay(5000);
+            return "任务执行后的结果";
         }
 
         private void StartUpdateTimer()
@@ -63,6 +95,5 @@ namespace CommunityToolkit.Mvvm.WpfDemo.ViewModels
             list.Add(student2);
             return list;
         }
-
     }
 }

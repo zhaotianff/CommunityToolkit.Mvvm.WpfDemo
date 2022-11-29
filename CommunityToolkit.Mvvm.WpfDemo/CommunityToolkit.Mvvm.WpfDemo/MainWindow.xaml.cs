@@ -29,5 +29,10 @@ namespace CommunityToolkit.Mvvm.WpfDemo
         {
             frame.Source = new Uri("Pages/ObservableObjectPage.xaml", UriKind.Relative);
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            frame.Source = new Uri("Pages/RelayCommandPage.xaml", UriKind.Relative);
+        }
     }
 }

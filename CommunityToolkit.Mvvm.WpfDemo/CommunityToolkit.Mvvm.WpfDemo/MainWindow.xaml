@@ -25,6 +25,7 @@
             <Border  Margin="10,10,0,10" BorderThickness="1" BorderBrush="Silver">
                 <StackPanel >
                     <Button Content="ObservableObject" Margin="5" Click="Button_Click"></Button>
+                    <Button Content="RelayCommand" Margin="5" Click="Button_Click_1"></Button>
                 </StackPanel>
             </Border>
 
