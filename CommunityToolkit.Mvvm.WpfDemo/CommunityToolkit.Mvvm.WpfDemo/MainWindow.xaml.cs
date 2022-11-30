@@ -34,5 +34,10 @@ namespace CommunityToolkit.Mvvm.WpfDemo
         {
             frame.Source = new Uri("Pages/RelayCommandPage.xaml", UriKind.Relative);
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            frame.Source = new Uri("Pages/AsyncRelayCommandPage.xaml", UriKind.Relative);
+        }
     }
 }
