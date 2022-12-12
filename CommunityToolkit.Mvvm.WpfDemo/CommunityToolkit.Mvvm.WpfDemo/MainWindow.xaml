@@ -27,6 +27,7 @@
                     <Button Content="ObservableObject" Margin="5" Click="Button_Click"></Button>
                     <Button Content="RelayCommand" Margin="5" Click="Button_Click_1"></Button>
                     <Button Content="AsyncRelayCommand" Margin="5" Click="Button_Click_2"></Button>
+                    <Button Content="Messager" Margin="5" Click="Button_Click_3"></Button>
                 </StackPanel>
             </Border>
 
