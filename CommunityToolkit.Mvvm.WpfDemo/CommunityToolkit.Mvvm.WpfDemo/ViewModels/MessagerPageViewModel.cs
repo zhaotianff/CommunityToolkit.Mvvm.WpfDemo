@@ -47,6 +47,12 @@ namespace CommunityToolkit.Mvvm.WpfDemo.ViewModels
         public RightPanelViewModel()
         {
             Messenger.Register<RightPanelViewModel, PatientMessage>(this, OnReceivePatientChangedMessage);
+
+            //After using messenger, it is necessary to call Messenger.Cleanup() for cleaning.
+            //Messenger.Cleanup();
+
+            //If you don't want to manually clean it, you can use the WeakReferenceMessenger class
+            //WeakReferenceMessenger.Default.Register<RightPanelViewModel, PatientMessage>(this, OnReceivePatientChangedMessage);
         }
 
         private void OnReceivePatientChangedMessage(RightPanelViewModel rightPanelViewModel,PatientMessage patientMessage)
